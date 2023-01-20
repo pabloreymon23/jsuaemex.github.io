@@ -289,6 +289,10 @@ section{
         margin: 60px 0px 0px 0px;
         width: 100%;
     }
+    #menu-problem{
+        margin: 0;
+        width: 100%;
+    }
     aside{
         float: none;
         position: relative;
