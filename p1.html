@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fuente-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--Archivo CSS-->
+    <link rel="stylesheet" href="css/setting.css">
+    <!--LIBRERIAS JAVASCRIPT-->
+    <script src="jquery/jquery.js"></script>
+    <!--Archivo JS-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/p1.js"></script>
+    <!--Icono de la página-->
+    <link rel="shortcut icon" href="fq.ico" type="image/x-icon">
+    <title>P1: Cálculo de Punto de Burbuja a Temperatura Constante.</title>
+</head>
+<body>
+    <header>
+        <nav id="cabecera">
+            <ul>
+                <li><a href="index.html"><img src="img/uaemex.png" alt="UAEMex" height="40"></a></li>
+                <li>
+                    <dl>
+                        <dt><b>Universidad Autónoma del Estado de México</b></dt>
+                        <dd>Facultad de Química</dd>
+                    </dl>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Problema Propuesto No. 1: Cálculo de Punto de Burbuja a Temperatura Constante.</h2>
+        <aside id="data-problema">
+            <!--DESCRIPCIÓN DEL PROBLEMA-->
+            <div class="container-doc">
+                <div class="container-title" id="c-1">
+                    <p><b>Descripción del Problema</b></p>
+                </div>
+                <div class="container-description" id="d-1">
+                    <p>
+                        Supóngase que la Ley de Raoult sea válida; para un sistema (1) Benceno - (2) Tolueno 
+                        con una temperatura de 80<sup>o</sup>C elabore un diagrama P-x-y para tal sistema conforme 
+                        a la ecuación de Antoine:
+                    </p>
+                </div>
+            </div>
+            <!--MOSTRAR DIAGRAMA OPCIONAL-->
+            <div class="container-doc">
+                <div class="container-title">
+                    <p><b>Diagrama / Esquema</b></p>
+                </div>
+                <div class="container-description">
+                    <img src="img/001-tesis.png" alt="Diagrama">
+                </div>
+            </div>
+            <!--FORMULARIO DE DATOS-->
+            <div class="container-form">
+                <form method="get">
+                    <fieldset id="data-camp">
+                        <legend>Datos generales</legend>
+                        <label for="temp">Temperatura:</label>
+                        <input type="text" name="temp" id="temp" required>
+                        <br>
+                        <label for="name1">Sustancia No. 1:</label>
+                        <input type="text" name="name1" id="name1" required>
+                        <label for="name2">Sustancia No. 2:</label>
+                        <input type="text" name="name2" id="name2" required>
+                    </fieldset>
+                    <fieldset id="data-camp">
+                        <legend>Sustancia 1</legend>
+                        <label for="a1">A</label>
+                        <input type="text" name="a1" id="a1" required>
+                        <label for="b1">B</label>
+                        <input type="text" name="b1" id="b1" required>
+                        <label for="c1">C</label>
+                        <input type="text" name="c1" id="c1" required>
+                    </fieldset>
+                    <fieldset id="data-camp">
+                        <legend>Sustancia 2</legend>
+                        <label for="a1">A</label>
+                        <input type="text" name="a2" id="a2" required>
+                        <label for="b1">B</label>
+                        <input type="text" name="b2" id="b2" required>
+                        <label for="c1">C</label>
+                        <input type="text" name="c2" id="c2" required>
+                    </fieldset>
+                    <!--Boton de Enviar-->
+                    <fieldset id="submit">
+                        <input type="submit" value="Calcular">
+                    </fieldset>
+                </form>
+            </div>
+            <!--PIE DE PÁGINA-->
+            <div id="foot">
+                <p>Programación en JavaScript para la Resolución de Problemas Aplicados a la Ingeniería Química</p>
+                <p><b>Autor: </b> José Pablo Reyes Montes de Oca     | <b>Fecha:</b> 27 de Noviembre, 2022 </p>
+            </div>
+        </aside>
+        <article id="resultado">
+            <h2>Salida de Datos</h2>
+            <div class="tabla">
+                <!--Tabla de iteraciones-->
+                <table id="tabla">
+                </table>
+            </div>
+            <div id="diagrama">
+                <h2>Diagrama de salida</h2>
+                <canvas id="graphline"></canvas>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

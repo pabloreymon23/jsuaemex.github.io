@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fuente-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--Archivo CSS-->
+    <link rel="stylesheet" href="css/setting.css">
+    <!--LIBRERIAS JAVASCRIPT-->
+    <script src="jquery/jquery.js"></script>
+    <!--Archivo JS-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/p3.js"></script>
+    <!--Icono de la página-->
+    <link rel="shortcut icon" href="fq.ico" type="image/x-icon">
+    <title>P3: Extracción S-L simple</title>
+</head>
+<body>
+    <header>
+        <nav id="cabecera">
+            <ul>
+                <li><a href="index.html"><img src="img/uaemex.png" alt="UAEMex" height="40"></a></li>
+                <li>
+                    <dl>
+                        <dt><b>Universidad Autónoma del Estado de México</b></dt>
+                        <dd>Facultad de Química</dd>
+                    </dl>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Problema Propuesto No. 3: Extracción sólido - líquido simple.</h2>
+        <aside id="data-problema">
+            <!--DESCRIPCIÓN DEL PROBLEMA-->
+            <div class="container-doc">
+                <div class="container-title" id="c-1">
+                    <p><b>Descripción del Problema</b></p>
+                </div>
+                <div class="container-description" id="d-1">
+                    <p>
+                        Se desean recuperar sólidos de una corriente principal de 600Kg cuya composición es de 25% 
+                        de sólidos, 5% de agua y 70% de material inerte. Para esto, se somete a una extracción sólido 
+                        – líquido de una sola etapa con 1500kg de agua. Se requiere que los lodos contengan 0.8kg de 
+                        solución por cada kg de inerte. Determine las composiciones del Extracto y Refinado, así como 
+                        sus cantidades totales; adicionalmente determine el porcentaje de material sólido recuperado.
+                    </p>
+                    <br>
+                    <p>
+                        Dibuje las composiciones apoyándose de un diagrama triangular D-S.
+                    </p>
+                </div>
+            </div>
+            <!--MOSTRAR DIAGRAMA OPCIONAL-->
+            <div class="container-doc">
+                <div class="container-title">
+                    <p><b>Diagrama / Esquema</b></p>
+                </div>
+                <div class="container-description">
+                    <img src="img/ESimple.jpg" alt="Diagrama">
+                </div>
+            </div>
+            <!--FORMULARIO DE DATOS-->
+            <div class="container-form">
+                <form method="get">
+                    <fieldset id="data-camp">
+                        <legend>Corriente A</legend>
+                        <label for="A">Cantidad:</label>
+                        <input type="text" name="A" id="A" required>
+                        <br>
+                        <label for="A_ws">w<sub>s</sub></label>
+                        <input type="text" name="A_ws" id="A_ws" required>
+                        <label for="A_ww">w<sub>w</sub></label>
+                        <input type="text" name="A_ww" id="A_ww" required>
+                        <label for="A_wi">w<sub>i</sub></label>
+                        <input type="text" name="A_wi" id="A_wi">
+                    </fieldset>
+                    <fieldset id="data-camp">
+                        <legend>Corriente D</legend>
+                        <label for="D">Cantidad:</label>
+                        <input type="text" name="D" id="D" required>
+                        <br>
+                        <label for="D_xs">x<sub>s</sub></label>
+                        <input type="text" name="D_xs" id="D_xs" required>
+                        <label for="D_xw">x<sub>w</sub></label>
+                        <input type="text" name="D_xw" id="D_xw" required>
+                        <label for="D_xi">x<sub>i</sub></label>
+                        <input type="text" name="D_xi" id="D_xi" required>
+                    </fieldset>
+                    <fieldset id="data-camp">
+                        <legend>General</legend>
+                        <label for="Rel">Relación:</label>
+                        <input type="text" name="Rel" id="Rel" required>
+                    </fieldset>
+                    <!--Boton de Enviar-->
+                    <fieldset id="submit">
+                        <input type="submit" value="Calcular">
+                    </fieldset>
+                </form>
+            </div>
+            <!--PIE DE PÁGINA-->
+            <div id="foot">
+                <p>Programación en JavaScript para la Resolución de Problemas Aplicados a la Ingeniería Química</p>
+                <p><b>Autor: </b> José Pablo Reyes Montes de Oca     | <b>Fecha:</b> 27 de Noviembre, 2022 </p>
+            </div>
+        </aside>
+        <article id="resultado">
+            <h2>Salida de Datos</h2>
+            <div class="tabla">
+                <!--Tabla de iteraciones-->
+                <table id="tabla">
+                   
+                </table>
+            </div>
+            <div id="diagrama">
+                <h2>Diagrama de salida</h2>
+                <canvas id="graphline"></canvas>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

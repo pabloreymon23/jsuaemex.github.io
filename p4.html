@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fuente-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--Archivo CSS-->
+    <link rel="stylesheet" href="css/setting.css">
+    <!--LIBRERIAS JAVASCRIPT-->
+    <script src="jquery/jquery.js"></script>
+    <!--Archivo JS-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/p4.js"></script>
+    <!--Icono de la página-->
+    <link rel="shortcut icon" href="fq.ico" type="image/x-icon">
+    <title>P4: Extracción S-L en paralelo</title>
+</head>
+<body>
+    <header>
+        <nav id="cabecera">
+            <ul>
+                <li><a href="index.html"><img src="img/uaemex.png" alt="UAEMex" height="40"></a></li>
+                <li>
+                    <dl>
+                        <dt><b>Universidad Autónoma del Estado de México</b></dt>
+                        <dd>Facultad de Química</dd>
+                    </dl>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Problema Propuesto No. 4: Extracción sólido - líquido arreglo en paralelo.</h2>
+        <aside id="data-problema">
+            <!--DESCRIPCIÓN DEL PROBLEMA-->
+            <div class="container-doc">
+                <div class="container-title" id="c-1">
+                    <p><b>Descripción del Problema</b></p>
+                </div>
+                <div class="container-description" id="d-1">
+                    <p>
+                        En una corriente principal de 800kg que contiene 40% de un mineral y el resto de inertes; se 
+                        desea extraer el mineral en una unidad de extracción sólido – líquido de múltiples etapas 
+                        dispuestas en un arreglo paralelo. En este sistema se alimentan 600kg de agua en cada etapa. 
+                        Si se desea que el refinado posea 0.3 Kg de agua por cada kg de inerte. Determine la cantidad 
+                        de etapas teóricas, las composiciones en el refinado y extracto, así como la composición del 
+                        extracto y refinados totales considerando que se desea extraer el 80% del mineral de la corriente 
+                        principal.
+                    </p>
+                    <br>
+                    <p>
+                        Dibuje las composiciones apoyándose de un diagrama triangular D-S.
+                    </p>
+                </div>
+            </div>
+            <!--MOSTRAR DIAGRAMA OPCIONAL-->
+            <div class="container-doc">
+                <div class="container-title">
+                    <p><b>Diagrama / Esquema</b></p>
+                </div>
+                <div class="container-description">
+                    <img src="img/EParalela.jpg" alt="Diagrama">
+                </div>
+            </div>
+            <!--FORMULARIO DE DATOS-->
+            <div class="container-form">
+                <form method="get">
+                    <fieldset id="data-camp">
+                        <legend>Corriente A</legend>
+                        <label for="A">Cantidad:</label>
+                        <input type="text" name="A" id="A" required>
+                        <br>
+                        <label for="A_ws">w<sub>s</sub></label>
+                        <input type="text" name="A_ws" id="A_ws" required>
+                        <label for="A_ww">w<sub>w</sub></label>
+                        <input type="text" name="A_ww" id="A_ww" required>
+                        <label for="A_wi">w<sub>i</sub></label>
+                        <input type="text" name="A_wi" id="A_wi">
+                    </fieldset>
+                    <fieldset id="data-camp">
+                        <legend>Corriente D</legend>
+                        <label for="D">Cantidad:</label>
+                        <input type="text" name="D" id="D" required>
+                        <br>
+                        <label for="D_xs">x<sub>s</sub></label>
+                        <input type="text" name="D_xs" id="D_xs" required>
+                        <label for="D_xw">x<sub>w</sub></label>
+                        <input type="text" name="D_xw" id="D_xw" required>
+                        <label for="D_xi">x<sub>i</sub></label>
+                        <input type="text" name="D_xi" id="D_xi" required>
+                    </fieldset>
+                    <fieldset id="data-camp">
+                        <legend>General</legend>
+                        <label for="Rel">Relación:</label>
+                        <input type="text" name="Rel" id="Rel" required>
+                        <label for="grade">Recuperación:</label>
+                        <input type="text" name="grade" id="grade" required>
+                    </fieldset>
+                    <!--Boton de Enviar-->
+                    <fieldset id="submit">
+                        <input type="submit" value="Calcular">
+                    </fieldset>
+                </form>
+            </div>
+            <!--PIE DE PÁGINA-->
+            <div id="foot">
+                <p>Programación en JavaScript para la Resolución de Problemas Aplicados a la Ingeniería Química</p>
+                <p><b>Autor: </b> José Pablo Reyes Montes de Oca     | <b>Fecha:</b> 27 de Noviembre, 2022 </p>
+            </div>
+        </aside>
+        <article id="resultado">
+            <h2>Salida de Datos</h2>
+            <div class="matriz">
+                <!--Tabla de iteraciones-->
+                <table id="matriz">
+                    
+                </table>
+            </div>
+            <div class="tabla">
+                <!--Tabla de iteraciones-->
+                <table id="tabla">
+                   
+                </table>
+            </div>
+            <div id="diagrama">
+                <h2>Diagrama de salida</h2>
+                <canvas id="graphline"></canvas>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

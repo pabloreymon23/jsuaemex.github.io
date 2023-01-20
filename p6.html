@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fuente-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--Archivo CSS-->
+    <link rel="stylesheet" href="css/setting.css">
+    <!--LIBRERIAS JAVASCRIPT-->
+    <script src="jquery/jquery.js"></script>
+    <!--Archivo JS-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/p6.js"></script>
+    <!--Icono de la página-->
+    <link rel="shortcut icon" href="fq.ico" type="image/x-icon">
+    <title>P6: Diseño de un reactor PBR</title>
+</head>
+<body>
+    <header>
+        <nav id="cabecera">
+            <ul>
+                <li><a href="index.html"><img src="img/uaemex.png" alt="UAEMex" height="40"></a></li>
+                <li>
+                    <dl>
+                        <dt><b>Universidad Autónoma del Estado de México</b></dt>
+                        <dd>Facultad de Química</dd>
+                    </dl>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Problema Propuesto No. 6: Diseño de un reactor de lecho empacado PBR isotérmico con caída de presión</h2>
+        <aside id="data-problema">
+            <!--DESCRIPCIÓN DEL PROBLEMA-->
+            <div class="container-doc">
+                <div class="container-title" id="c-1">
+                    <p><b>Descripción del Problema</b></p>
+                </div>
+                <div class="container-description" id="d-1">
+                   <p>
+                    Se desea producir 1.08lbmol/h de óxido de etileno a partir de etileno y oxígeno en proporciones 
+                    estequiométricas. Esta operación es isotérmica a 260ºC. La alimentación de etileno se lleva a 
+                    razón de 0.3 lbmol/s y una presión de 10atm. Para el diseño del Reactor de Lecho Empacado (PBR) 
+                    donde se realizará la operación se pretende usar 10 bancos de 100 tubos cada uno, cada tubo tiene 
+                    un diámetro interno de 0.134ft, el flujo molar será de 3x10^(-4)  lbmol/s. La reacción y la ley de 
+                    velocidad son las siguientes:
+                   </p>
+                </div>
+            </div>
+            <!--MOSTRAR DIAGRAMA OPCIONAL-->
+            <div class="container-doc">
+                <div class="container-title">
+                    <p><b>Diagrama / Esquema</b></p>
+                </div>
+                <div class="container-description">
+                    <img src="img/003-tesis.png" alt="Diagrama">
+                </div>
+            </div>
+            <!--FORMULARIO DE DATOS-->
+            <div class="container-form">
+                <form method="get">
+                    <fieldset id="data-camp">
+                        <legend>General</legend>
+                        <label for="FA0">FA0:</label>
+                        <input type="text" name="FA0" id="FA0" required>
+                        <label for="X">X:</label>
+                        <input type="text" name="X" id="X" required>
+                        <br>
+                        <label for="k">Constante de Equilibrio:</label>
+                        <input type="text" name="k" id="k" required>
+                        <br>
+                        <label for="P0">Presión:</label>
+                        <input type="text" name="P0" id="P0" required>
+                        <br>
+                        <label for="rho">Densidad del catalizador: </label>
+                        <input type="text" name="rho" id="rho" required>
+                        <br>
+                        <label for="phi">Fracción de hueco:</label>
+                        <input type="text" name="phi" id="phi" required>
+                        <br>
+                        <label for="DI">Diametro Int. del tubo:</label>
+                        <input type="text" name="DI" id="DI" required>
+                        <br>
+                        <label for="t">No. de tubos:</label>
+                        <input type="text" name="t" id="t" required>
+                    </fieldset>
+                    <!--Boton de Enviar-->
+                    <fieldset id="submit">
+                        <input type="submit" value="Calcular">
+                    </fieldset>
+                </form>
+            </div>
+            <!--PIE DE PÁGINA-->
+            <div id="foot">
+                <p>Programación en JavaScript para la Resolución de Problemas Aplicados a la Ingeniería Química</p>
+                <p><b>Autor: </b> José Pablo Reyes Montes de Oca     | <b>Fecha:</b> 27 de Noviembre, 2022 </p>
+            </div>
+        </aside>
+        <article id="resultado">
+            <h2>Salida de Datos</h2>
+            <div class="matriz">
+                <!--Tabla de iteraciones-->
+                <table id="matriz">
+                </table>
+            </div>
+            <div id="diagrama">
+                <h2>Diagrama de salida</h2>
+                <canvas id="graphline"></canvas>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

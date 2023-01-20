@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fuente-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--Archivo CSS-->
+    <link rel="stylesheet" href="css/setting.css">
+    <!--LIBRERIAS JAVASCRIPT-->
+    <script src="jquery/jquery.js"></script>
+    <!--Archivo JS-->
+    <script src="js/setting.js"></script>
+    <script src="js/p8.js"></script>
+    <!--Icono de la página-->
+    <link rel="shortcut icon" href="fq.ico" type="image/x-icon">
+    <title>P8: Diseño de intercambiadores de calor</title>
+</head>
+<body>
+    <header>
+        <nav id="cabecera">
+            <ul>
+                <li><a href="index.html"><img src="img/uaemex.png" alt="UAEMex" height="40"></a></li>
+                <li>
+                    <dl>
+                        <dt><b>Universidad Autónoma del Estado de México</b></dt>
+                        <dd>Facultad de Química</dd>
+                    </dl>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Problema Propuesto No. 8: Diseño de intercambiadores de calor de tubos concéntricos.</h2>
+        <aside id="data-problema">
+            <!--DESCRIPCIÓN DEL PROBLEMA-->
+            <div class="container-doc">
+                <div class="container-title" id="c-1">
+                    <p><b>Descripción del Problema</b></p>
+                </div>
+                <div class="container-description" id="d-1">
+                    <p>
+                        Se requiere del diseño de un intercambiador de tubos concéntricos con el cual se desea calentar 9820lb/h de benceno 
+                        frío de 80 a 120ºF usando tolueno caliente que se enfría de 160 a 100ºF. Las gravedades específicas a 68ºF son 0.88 
+                        y 0.87 respectivamente. Considérese que a cada corriente se le asignará un factor de obstrucción de 0.001, y la caída 
+                        de presión permitida para cada corriente es de 10ln/in2.
+                    </p>
+                    <br>
+                    <p>
+                        Para el diseño de dicho intercambiador se dispone de horquillas de 20ft de longitud de 2in y de 1¼in IPS, determine 
+                        la cantidad de horquillas requeridas para su operación.
+                    </p>
+                </div>
+            </div>
+            <!--FORMULARIO DE DATOS-->
+            <div class="container-form">
+                <span>Válido para fluidos con viscosidad menor a 1cp.</span>
+                <br><br>
+                <form method="get">
+                    <fieldset id="data-camp">
+                        <legend>Flujo de fluido</legend>
+                        <label for="flow">Cantidad:</label>    
+                        <input type="text" name="flow" id="flow" required>
+                        <label for="type">Tipo de fluido:</label>
+                        <select name="type" id="type" required>
+                            <option value="frio" id="frio">Frío</option>
+                            <option value="caliente" id="caliente">Caliente</option>
+                        </select>
+                    </fieldset>
+                    <fieldset id="data-camp">
+                        <legend>Fluido frío</legend>
+                        <label for="flow1name">Nombre:</label>
+                        <input type="text" name="flow1name" id="flow1name" required>
+                        <label for="t1">t1:</label>
+                        <input type="text" name="t1" id="t1" required>
+                        <label for="t2">t2:</label>
+                        <input type="text" name="t2" id="t2" required>
+                        <br>
+                        <label>La tprom es: <span id="tprom"></span></label>
+                        <br>
+                        <label for="cp">Calor específico:</label>
+                        <input type="text" name="cp" id="cp" required>
+                        <label for="GE1">Gravedad específica:</label>
+                        <input type="text" name="GE1" id="GE1" required>
+                        <br>
+                        <label for="mu1">Viscosidad</label>
+                        <input type="text" name="mu1" id="mu1" required>
+                        <label for="k1">k:</label>
+                        <input type="text" name="k1" id="k1" required>
+                    </fieldset>
+                    <fieldset id="data-camp">
+                        <legend>Fluido caliente</legend>
+                        <label for="flow2name">Nombre:</label>
+                        <input type="text" name="flow2name" id="flow2name" required>
+                        <label for="T1">T1:</label>
+                        <input type="text" name="T1" id="T1" required>
+                        <label for="T2">T2:</label>
+                        <input type="text" name="T2" id="T2" required>
+                        <br>
+                        <label>La Tprom es: <span id="Tprom"></span></label>
+                        <br>
+                        <label for="CP">Calor específico:</label>
+                        <input type="text" name="CP" id="CP" required>
+                        <label for="GE2">Gravedad específica:</label>
+                        <input type="text" name="GE2" id="GE2" required>
+                        <br>
+                        <label for="mu2">Viscosidad</label>
+                        <input type="text" name="mu2" id="mu2" required>
+                        <label for="k2">k:</label>
+                        <input type="text" name="k2" id="k2" required>
+                    </fieldset>
+                    <fieldset id="data-camp">
+                        <legend>General</legend>
+                        <label for="fo">Factor fricción:</label>
+                        <input type="text" name="fo" id="fo" required>
+                        <label for="dp">Caída de presión:</label>
+                        <input type="text" name="dp" id="dp" required>
+                        <br>
+                        <label for="lg">Longitud:</label>
+                        <input type="text" name="lg" id="lg" required>
+                        <label for="DI">DI. Ánulo:</label>
+                        <input type="text" name="DI" id="DI" required>
+                        <br>
+                        <label for="di">Di. Interior:</label>
+                        <input type="text" name="di" id="di" required>
+                        <label for="de">DE. Interior:</label>
+                        <input type="text" name="de" id="de" required>
+                        <br>
+                        <label for="sl">Superficie lineal:</label>
+                        <input type="text" name="sl" id="sl" required>
+                        <br>
+                        <label>Re ánulo: <span id="Re_a"></span></label>
+                        <br>
+                        <label for="JH_a">Factor J<sub>H</sub></label>
+                        <input type="text" name="JH_a" id="JH_a" required>
+                        <br>
+                        <label>Re tubo: <span id="Re_p"></span></label>
+                        <br>
+                        <label for="JH_p">Factor J<sub>H</sub></label>
+                        <input type="text" name="JH_p" id="JH_p" required>
+                    </fieldset>
+                    <!--Boton de Enviar-->
+                    <fieldset id="submit">
+                        <input type="submit" value="Calcular">
+                    </fieldset>
+                </form>
+            </div>
+            <!--PIE DE PÁGINA-->
+            <div id="foot">
+                <p>Programación en JavaScript para la Resolución de Problemas Aplicados a la Ingeniería Química</p>
+                <p><b>Autor: </b> José Pablo Reyes Montes de Oca     | <b>Fecha:</b> 27 de Noviembre, 2022 </p>
+            </div>
+        </aside>
+        <article id="resultado">
+            <h2>Salida de Datos</h2>
+            <div class="matriz">
+                <!--Tabla de iteraciones-->
+                <table id="matriz" class="general-d">
+
+                </table>
+            </div>
+            <div class="matriz">
+                <!--Tabla de iteraciones-->
+                <table id="matriz" class="design">
+
+                </table>
+            </div>
+            <div class="matriz">
+                <!--Tabla de iteraciones-->
+                <table id="matriz" class="flow-des">
+
+                </table>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fuente-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--Archivo CSS-->
+    <link rel="stylesheet" href="css/setting.css">
+    <!--LIBRERIAS JAVASCRIPT-->
+    <script src="jquery/jquery.js"></script>
+    <!--Archivo JS-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/p7.js"></script>
+    <!--Icono de la página-->
+    <link rel="shortcut icon" href="fq.ico" type="image/x-icon">
+    <title>P7: Diseño de torres de absorción</title>
+</head>
+<body>
+    <header>
+        <nav id="cabecera">
+            <ul>
+                <li><a href="index.html"><img src="img/uaemex.png" alt="UAEMex" height="40"></a></li>
+                <li>
+                    <dl>
+                        <dt><b>Universidad Autónoma del Estado de México</b></dt>
+                        <dd>Facultad de Química</dd>
+                    </dl>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Problema Propuesto No. 7: Diseño de torres de absorción empacadas con coeficientes locales de película</h2>
+        <aside id="data-problema">
+            <!--DESCRIPCIÓN DEL PROBLEMA-->
+            <div class="container-doc">
+                <div class="container-title" id="c-1">
+                    <p><b>Descripción del Problema</b></p>
+                </div>
+                <div class="container-description" id="d-1">
+                    <p>
+                        Determine la altura de una torre de absorción a partir de k’ya; si se desea absorber acetona 
+                        en agua y la torre empacada tiene un área de contacto transversal de 1.98m^2, la entrada de 
+                        aire contiene apenas 2.5%mol de acetona y la salida de 0.5%mol. El flujo de gas entrantes es 
+                        de 14.80Kg de aire inerte por hora, el flujo de agua pura es de 50.4Kg/h, los coeficientes de 
+                        película para los flujos dados en la torre son:
+                    </p>
+                </div>
+            </div>
+            <!--MOSTRAR DIAGRAMA OPCIONAL-->
+            <div class="container-doc">
+                <div class="container-title">
+                    <p><b>Diagrama / Esquema</b></p>
+                </div>
+                <div class="container-description">
+                    <img src="img/004-tesis.png" alt="Diagrama">
+                </div>
+            </div>
+            <!--FORMULARIO DE DATOS-->
+            <div class="container-form">
+                <form method="get">
+                    <fieldset id="data-camp">
+                        <legend>Gas</legend>
+                        <label for="G"> G:</label>
+                        <input type="text" name="G" id="G" required>
+                        <label for="ya1">ya1:</label>
+                        <input type="text" name="ya1" id="ya1" required>
+                        <label for="ya2">ya2:</label>
+                        <input type="text" name="ya2" id="ya2" required>
+                    </fieldset>
+                    <fieldset id="data-camp">
+                        <legend>Líquido</legend>
+                        <label for="L">L:</label>
+                        <input type="text" name="L" id="L" required>
+                        <label for="xa2">xa2:</label>
+                        <input type="text" name="xa2" id="xa2" required>
+                    </fieldset>
+                    <fieldset id="data-camp">
+                        <label for="kya">k'ya:</label>
+                        <input type="text" name="kya" id="kya" required>
+                        <label for="kxa">k'xa:</label>
+                        <input type="text" name="kxa" id="kxa" required>
+                        <br>
+                        <label for="H">H:</label>
+                        <input type="text" name="H" id="H" required>
+                        <label for="s">Área transversal:</label>
+                        <input type="text" name="s" id="s" required>
+                    </fieldset>
+                    <!--Boton de Enviar-->
+                    <fieldset id="submit">
+                        <input type="submit" value="Calcular">
+                    </fieldset>
+                </form>
+            </div>
+            <!--PIE DE PÁGINA-->
+            <div id="foot">
+                <p>Programación en JavaScript para la Resolución de Problemas Aplicados a la Ingeniería Química</p>
+                <p><b>Autor: </b> José Pablo Reyes Montes de Oca     | <b>Fecha:</b> 27 de Noviembre, 2022 </p>
+            </div>
+        </aside>
+        <article id="resultado">
+            <h2>Salida de Datos</h2>
+            <div class="matriz">
+                <!--Tabla de iteraciones-->
+                <table id="matriz">
+                    
+                </table>
+            </div>
+            <div class="tabla">
+                <!--Tabla de iteraciones-->
+                <table id="tabla">
+                    
+                </table>
+            </div>
+            <div id="diagrama">
+                <h2>Diagrama de salida</h2>
+                <canvas id="graphline"></canvas>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fuente-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--Archivo CSS-->
+    <link rel="stylesheet" href="css/setting.css">
+    <!--LIBRERIAS JAVASCRIPT-->
+    <script src="jquery/jquery.js"></script>
+    <!--Archivo JS-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/p5.js"></script>
+    <!--Icono de la página-->
+    <link rel="shortcut icon" href="fq.ico" type="image/x-icon">
+    <title>P5: Diseño de un reactor PFR</title>
+</head>
+<body>
+    <header>
+        <nav id="cabecera">
+            <ul>
+                <li><a href="index.html"><img src="img/uaemex.png" alt="UAEMex" height="40"></a></li>
+                <li>
+                    <dl>
+                        <dt><b>Universidad Autónoma del Estado de México</b></dt>
+                        <dd>Facultad de Química</dd>
+                    </dl>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Problema Propuesto No. 5: Diseño de un Reactor de Flujo Tapón (PFR) isotérmico</h2>
+        <aside id="data-problema">
+            <!--DESCRIPCIÓN DEL PROBLEMA-->
+            <div class="container-doc">
+                <div class="container-title" id="c-1">
+                    <p><b>Descripción del Problema</b></p>
+                </div>
+                <div class="container-description" id="d-1">
+                    <p>
+                        Para la producción de 0.450lbmol/s de etileno determine el volumen de un Reactor de Flujo Tapón (PFR), si la 
+                        reacción por pirolisis requiere una alimentación de etano puro. Considérese que la reacción es irreversible, 
+                        se requiere una conversión de 80% de etano; la operación se realiza isotérmicamente a 1150K y una presión de 
+                        5.8 atm. A continuación, se muestra la ecuación de reacción y su respectiva ley de velocidad:
+                    </p>
+                </div>
+            </div>
+            <!--MOSTRAR DIAGRAMA OPCIONAL-->
+            <div class="container-doc">
+                <div class="container-title">
+                    <p><b>Diagrama / Esquema</b></p>
+                </div>
+                <div class="container-description">
+                    <img src="img/002-tesis.png" alt="Diagrama">
+                </div>
+            </div>
+            <!--FORMULARIO DE DATOS-->
+            <div class="container-form">
+                <form method="get">
+                    <fieldset id="data-camp">
+                        <legend>General</legend>
+                        <label for="B">FB:</label>
+                        <input type="text" name="B" id="B" required>
+                        <label for="X">X:</label>
+                        <input type="text" name="X" id="X" required>
+                        <br>
+                        <label for="Ti">Temperatura:</label>
+                        <input type="text" name="Ti" id="Ti" required>
+                        <label for="P">Presión</label>
+                        <input type="text" name="P" id="P" required>
+                        <br>
+                        <label for="k">Constante de Equilibrio:</label>
+                        <input type="text" name="k" id="k" required>
+                        <br>
+                        <label for="Tk">Temperatura de C. Eq</label>
+                        <input type="text" name="Tk" id="Tk" required>
+                        <br>
+                        <label for="Ea">Energía de activación: </label>
+                        <input type="text" name="Ea" id="Ea" required>
+                    </fieldset>
+                    <!--Boton de Enviar-->
+                    <fieldset id="submit">
+                        <input type="submit" value="Calcular">
+                    </fieldset>
+                </form>
+            </div>
+            <!--PIE DE PÁGINA-->
+            <div id="foot">
+                <p>Programación en JavaScript para la Resolución de Problemas Aplicados a la Ingeniería Química</p>
+                <p><b>Autor: </b> José Pablo Reyes Montes de Oca     | <b>Fecha:</b> 27 de Noviembre, 2022 </p>
+            </div>
+        </aside>
+        <article id="resultado">
+            <h2>Salida de Datos</h2>
+            <div class="matriz">
+                <!--Tabla de iteraciones-->
+                <table id="matriz">
+                    
+                </table>
+            </div>
+            <div id="diagrama">
+                <h2>Diagrama de salida</h2>
+                <canvas id="graphline"></canvas>
+            </div>
+        </article>
+    </section>
+</body>
+</html>
